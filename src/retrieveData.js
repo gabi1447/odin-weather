@@ -11,3 +11,21 @@ export async function retrieveWeatherData(location) {
         console.err(error.message);
     }
 }
+
+export async function retrieveGif(valueToSearch) {
+    const url = `https://api.giphy.com/v1/gifs/translate?api_key=96hwjEWRpXYc3YVHw3G3YbSTK3fslPO3&s=${valueToSearch}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(`HTTP error Status: ${response.status}`);
+        }
+        console.log(data);
+        const gifUrl = data["data"]["images"]["original"]["url"];
+        return gifUrl;
+    } catch (error) {
+        console.log(error.message);
+    }
+}
