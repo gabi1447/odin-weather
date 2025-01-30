@@ -9,11 +9,3 @@ export function FahrenheitToCelsius(degrees) {
 export function clearContentFromElement(element) {
     element.innerText = "";
 }
-
-export function hideElement(element, hiddenClass) {
-    element.classlist.add(hiddenClass);
-}
-
-export function makeElementVisible(element, hiddenClass) {
-    element.classlist.remove(hiddenClass);
-}
