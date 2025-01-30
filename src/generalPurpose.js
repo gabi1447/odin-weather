@@ -1,7 +1,19 @@
 export function celsiusToFahrenheit(degrees) {
-    return (degrees * 9) / 5 + 32;
+    return Math.round((degrees * 9) / 5 + 32);
 }
 
 export function FahrenheitToCelsius(degrees) {
-    return ((degrees - 32) * 5) / 9;
+    return Math.round(((degrees - 32) * 5) / 9);
+}
+
+export function clearContentFromElement(element) {
+    element.innerText = "";
+}
+
+export function hideElement(element, hiddenClass) {
+    element.classlist.add(hiddenClass);
+}
+
+export function makeElementVisible(element, hiddenClass) {
+    element.classlist.remove(hiddenClass);
 }
