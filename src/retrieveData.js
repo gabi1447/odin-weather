@@ -8,7 +8,7 @@ export async function retrieveWeatherData(location) {
         const responseObject = await response.json();
         return responseObject;
     } catch (error) {
-        console.err(error.message);
+        console.error(error.message);
     }
 }
 
@@ -33,7 +33,6 @@ export async function retrieveGif(valueToSearch) {
         if (!response.ok) {
             throw new Error(`HTTP error Status: ${response.status}`);
         }
-        console.log(data);
         const gifUrl = data["data"]["images"]["original"]["url"];
         return gifUrl;
     } catch (error) {
